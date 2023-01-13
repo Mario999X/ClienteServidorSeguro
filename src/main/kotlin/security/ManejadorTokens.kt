@@ -8,8 +8,9 @@ import java.util.*
 
 object ManejadorTokens {
 
+    val properties = FicheroProperties.loadProperties()
     // Algoritmo
-    private val algoritmo: Algorithm = Algorithm.HMAC256("123456")
+    private val algoritmo: Algorithm = Algorithm.HMAC256(properties.getProperty("clave.algoritmo"))
 
     // Creamos el token, se pide que el token expire en 60 segundos.
     // Para filtrar el tipo de usuario, vamos a crear un CLaim que sea el rol, se pide por parametros.
