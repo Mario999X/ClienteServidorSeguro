@@ -11,8 +11,9 @@ import mu.KotlinLogging
 import security.ManejadorTokens
 import java.io.DataInputStream
 import java.io.DataOutputStream
-import java.time.LocalDateTime
+import java.time.LocalTime
 import javax.net.ssl.SSLSocket
+
 
 private val log = KotlinLogging.logger {}
 private val json = Json
@@ -52,7 +53,7 @@ class GestorClientes(private val cliente: SSLSocket, private val usersDb: UsersD
             Response("No tiene permisos", Response.Type.ERROR)
         } else {
             log.debug { "Tiene permisos" }
-            Response("${LocalDateTime.now()}", Response.Type.OK)
+            Response("${LocalTime.now()}", Response.Type.OK)
         }
         salida.writeUTF(json.encodeToString(response) + "\n")
     }
