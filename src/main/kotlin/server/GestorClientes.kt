@@ -30,7 +30,7 @@ class GestorClientes(private val cliente: SSLSocket, private val usersDb: UsersD
     override fun run() {
         // Leemos el request que envie el cliente y lo guardamos en una variable
         val request = lecturaRequest()
-        // Comprobamos el token, si no existe, se comprueba que el request sea de tipo Login, si no se intentara verificar
+        // Comprobamos el token, si no existe, se comprueba que el request sea de tipo GET_TOKEN, si no se intentara verificar
         val permisos = comprobarToken(request)
 
         // Una vez comprobado el token, se opera segun el tipo de request
