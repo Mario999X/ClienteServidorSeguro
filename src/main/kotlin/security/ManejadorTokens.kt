@@ -8,7 +8,8 @@ import java.util.*
 
 object ManejadorTokens {
 
-    val properties = FicheroProperties.loadProperties()
+    private val properties = FicheroProperties.loadProperties()
+
     // Algoritmo
     private val algoritmo: Algorithm = Algorithm.HMAC256(properties.getProperty("clave.algoritmo"))
 
