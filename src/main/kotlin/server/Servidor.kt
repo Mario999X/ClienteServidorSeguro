@@ -58,7 +58,7 @@ Ademas y para variar un poco, los llaveros van a ser p12 en vez de jks.
     3.Ese archivo.jks es el que usara el servidor; lo guardamos en la raiz del proyecto (por ejemplo)
     4.Exportamos el certificado; nos desplazamos con cd hasta el directorio donde se encuentre el jks; abrimos terminal
         keytool -export -alias <alias> -storepass <clave> -file <archivo.cer> -keystore <archivo.p12>
-    5.Ese certificado lo importamos a un nuevo jks, que sera el que usara el cliente; lo mismo que en el punto 4
+    5.Ese certificado lo importamos a un nuevo llavero, que sera el que usara el cliente; lo mismo que en el punto 4
         keytool -import -alias <alias> -file <archivo.cer> -keystore <archivo.p12>
     6.Introducimos los datos que se soliciten
     7.FIN
