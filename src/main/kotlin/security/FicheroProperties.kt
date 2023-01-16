@@ -13,7 +13,7 @@ object FicheroProperties {
         val workingDir: String = System.getProperty("user.dir")
         // Fichero properties
         val ficheroProperties =
-            Paths.get(workingDir + fs + "sockets" + fs + "MGResa-sockets-Kotlin" + fs + "src" + fs + "main" + fs + "resources" + fs + "config.properties")
+            Paths.get(workingDir + fs + "src" + fs + "main" + fs + "resources" + fs + "config.properties")
 
         val properties = Properties()
 

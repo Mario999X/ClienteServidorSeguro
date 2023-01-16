@@ -113,7 +113,7 @@ private fun prepararConexion() {
     val workingDir: String = System.getProperty("user.dir")
     // Fichero donde se sacan los datos
     val fichero =
-        Paths.get(workingDir + File.separator + "sockets" + File.separator + "MGResa-sockets-Kotlin" + File.separator + "cert" + File.separator + "llavero_server.p12")
+        Paths.get(workingDir + File.separator + "cert" + File.separator + "llavero_server.p12")
             .toString()
 
     // Properties

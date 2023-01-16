@@ -130,7 +130,7 @@ private fun prepararConexion() {
     val workingDir: String = System.getProperty("user.dir")
     // Fichero de donde se sacan los datos del llavero
     val fichero =
-        Paths.get(workingDir + File.separator + "sockets" + File.separator + "MGResa-sockets-Kotlin" + File.separator + "certClient" + File.separator + "llavero_client.p12")
+        Paths.get(workingDir + File.separator + "certClient" + File.separator + "llavero_client.p12")
             .toString()
 
     // Properties
