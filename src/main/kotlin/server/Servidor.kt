@@ -44,7 +44,7 @@ el servidor, este se introducira en un mapa protegido con un Reentrantlock.
 Voy a hacer uso de una libreria que encontre por estar mas o menos acostumbrado para el tema BCrypt
 https://github.com/ToxicBakery/bcrypt-mpp
 
-Tanto para el tema cifrado de contraseñas como para la generacion de tokens voy a crear clases especificas
+Tanto para el cifrado de contraseñas como para la generacion de tokens voy a crear clases especificas
 que se encarguen de realizar esas operaciones.
 
 Todos los datos del usuario los pondre en variables, asi evito pedir la informacion por teclado.
@@ -112,7 +112,9 @@ fun main() {
 private fun prepararConexion() {
     val workingDir: String = System.getProperty("user.dir")
     // Fichero donde se sacan los datos
-    val fichero = Paths.get(workingDir + File.separator + "cert" + File.separator + "llavero_server.p12").toString()
+    val fichero =
+        Paths.get(workingDir + File.separator + "sockets" + File.separator + "MGResa-sockets-Kotlin" + File.separator + "cert" + File.separator + "llavero_server.p12")
+            .toString()
 
     // Properties
     val properties = FicheroProperties.loadProperties()

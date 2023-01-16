@@ -130,15 +130,20 @@ private fun prepararConexion() {
     val workingDir: String = System.getProperty("user.dir")
     // Fichero de donde se sacan los datos del llavero
     val fichero =
-        Paths.get(workingDir + File.separator + "certClient" + File.separator + "llavero_client.p12").toString()
+        Paths.get(workingDir + File.separator + "sockets" + File.separator + "MGResa-sockets-Kotlin" + File.separator + "certClient" + File.separator + "llavero_client.p12")
+            .toString()
 
     // Properties
     val properties = FicheroProperties.loadProperties()
 
-    // Para depurar y ver el dialogo y handshake -- NO es obligatorio
+    /*
+    Para depurar y ver el dialogo y handshake -- NO es obligatorio
+
+    A veces durante la ejecucion, este saldra el ultimo, parecera que el programa se ha colgado o ha dado fallo pero no.
+     */
     System.setProperty("javax.net.debug", "ssl, keymanager, handshake")
 
-    // Cargamos la informacion del llavero del cliente -- SI es obligatorio
+    // Cargamos la informacion del llavero del cliente
     System.setProperty("javax.net.ssl.trustStore", fichero)
     System.setProperty("javax.net.ssl.trustStorePassword", properties.getProperty("llavero.client"))
 
@@ -146,7 +151,7 @@ private fun prepararConexion() {
     clienteFactory = SSLSocketFactory.getDefault() as SSLSocketFactory
     servidor = clienteFactory.createSocket(direccion, PUERTO) as SSLSocket
 
-    // Obligatorio
+    // Sacar la informacion de la sesion
     informacionSesion(servidor)
 }
 

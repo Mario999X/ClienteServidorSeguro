@@ -7,11 +7,13 @@ import java.util.*
 
 object FicheroProperties {
 
+    private val fs = File.separator // Para que quede un path mas compacto
+
     fun loadProperties(): Properties {
         val workingDir: String = System.getProperty("user.dir")
         // Fichero properties
         val ficheroProperties =
-            Paths.get(workingDir + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "config.properties")
+            Paths.get(workingDir + fs + "sockets" + fs + "MGResa-sockets-Kotlin" + fs + "src" + fs + "main" + fs + "resources" + fs + "config.properties")
 
         val properties = Properties()
 
