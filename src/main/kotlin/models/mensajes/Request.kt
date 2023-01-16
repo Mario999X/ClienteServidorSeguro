@@ -11,6 +11,6 @@ data class Request<T>(
 
 ) {
     enum class Type {
-        GET_TOKEN, CONSULT
+        LOGIN, CONSULT
     }
 }

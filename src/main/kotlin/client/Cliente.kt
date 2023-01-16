@@ -109,7 +109,7 @@ private fun solicitarToken(): String? {
     val entrada = DataInputStream(servidor.inputStream)
 
     // Enviamos el request de login
-    request = Request(null, name, password, Request.Type.GET_TOKEN)
+    request = Request(null, name, password, Request.Type.LOGIN)
     salida.writeUTF(json.encodeToString(request) + "\n")
     log.debug { "Se envio $request" }
 

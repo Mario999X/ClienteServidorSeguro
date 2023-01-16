@@ -36,7 +36,7 @@ class GestorClientes(private val cliente: SSLSocket, private val usersDb: UsersD
         // Una vez comprobado el token, se opera segun el tipo de request
         if (!tokenExpired) {
             when (request.type) {
-                Request.Type.GET_TOKEN -> enviarToken(request)
+                Request.Type.LOGIN -> enviarToken(request)
                 Request.Type.CONSULT -> consultarHora(permisos)
             }
         } else tokenExpiredSignal()
@@ -101,7 +101,7 @@ class GestorClientes(private val cliente: SSLSocket, private val usersDb: UsersD
             if (token.getClaim("rol").toString().contains(Usuario.TipoUser.USER.rol)) {
                 funcionDisponible = false
             }
-        } else if (request.type != Request.Type.GET_TOKEN) {
+        } else if (request.type != Request.Type.LOGIN) {
             tokenExpired = true
         }
         return funcionDisponible
